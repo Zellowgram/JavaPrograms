@@ -80,7 +80,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpby5yb3NzaUBleGFtcGxlLmNvbSIsImlhdCI6MTc0ODA5Njc4NCwiZXhwIjoxNzQ4MTgzMTg0fQ.Gjy8GVCmF0lgYMWS6amB1EgFI0cs0Fs5eKMTRMLcOaLikjWJ3yzCMGpWeBg92P9H",
+						"value": "Bearer {TOKEN}",
 						"type": "text"
 					}
 				],
@@ -161,7 +161,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc0ODA5ODQ2MywiZXhwIjoxNzQ4MTg0ODYzfQ.sUkKpcEu-mDLg3qbma33nReE9dLL1RLy1X34oU-QA7U1BhocgpRd4TFAE3scF2_1",
+						"value": "Bearer {TOKEN_ADMIN_OR_MOD}",
 						"type": "text"
 					}
 				],
@@ -188,7 +188,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer {TOKEN_JWT_ADMIN}",
+						"value": "Bearer {TOKEN_ADMIN}",
 						"type": "text"
 					},
 					{
@@ -199,7 +199,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"email\": \"utente@example.com\",\r\n  \"ruolo\": \"MODERATORE\"\r\n}",
+					"raw": "{\r\n  \"ruolo\": \"MODERATORE\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -207,7 +207,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/utenti/cambia-ruolo",
+					"raw": "http://localhost:8080/api/utenti/1/ruolo",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -216,7 +216,8 @@
 					"path": [
 						"api",
 						"utenti",
-						"cambia-ruolo"
+						"1",
+						"ruolo"
 					]
 				}
 			},

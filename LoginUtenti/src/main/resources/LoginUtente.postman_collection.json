@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "0105245f-aa7b-4b3f-8fb3-d929a7731c2d",
+		"name": "LoginUtente",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43493705",
+		"_collection_link": "https://eustachio-straziuso-7435449.postman.co/workspace/eustachio-straziuso's-Workspace~278a576b-ed6f-4190-853c-d67f6a5a0dbc/collection/43493705-0105245f-aa7b-4b3f-8fb3-d929a7731c2d?action=share&source=collection_link&creator=43493705"
+	},
+	"item": [
+		{
+			"name": "Registrazione",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nickname\": \"marioRossi\",\r\n  \"email\": \"mario.rossi@example.com\",\r\n  \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vista utenti",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYXJpby5yb3NzaUBleGFtcGxlLmNvbSIsImlhdCI6MTc0ODA5Njc4NCwiZXhwIjoxNzQ4MTgzMTg0fQ.Gjy8GVCmF0lgYMWS6amB1EgFI0cs0Fs5eKMTRMLcOaLikjWJ3yzCMGpWeBg92P9H",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/utenti/profilo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"utenti",
+						"profilo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vista ADMIN",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {TOKEN_JWT_ADMIN}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/utenti/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"utenti",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vista MOD",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {TOKEN_JWT_MODERATORE}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/utenti/mod",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"utenti",
+						"mod"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista utenti",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBleGFtcGxlLmNvbSIsImlhdCI6MTc0ODA5ODQ2MywiZXhwIjoxNzQ4MTg0ODYzfQ.sUkKpcEu-mDLg3qbma33nReE9dLL1RLy1X34oU-QA7U1BhocgpRd4TFAE3scF2_1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/utenti/lista",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"utenti",
+						"lista"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cambia ruolo utente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {TOKEN_JWT_ADMIN}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"utente@example.com\",\r\n  \"ruolo\": \"MODERATORE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/utenti/cambia-ruolo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"utenti",
+						"cambia-ruolo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

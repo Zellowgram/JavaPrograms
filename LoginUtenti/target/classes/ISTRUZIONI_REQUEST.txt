@@ -1,0 +1,8 @@
+L'applicazione parte con 3 utenti già presenti nel db:
+1 per ogni ruolo (utente, moderatore, admin)
+Per le REQUEST "Lista utenti" e "Cambia ruolo utente"
+E' necessario avere il token di un utente admin (per cambiare ruolo e vedere la lista)
+Il token di utente moderatore può solo far visualizzare la lista.
+Per cui è necessario fare il login con le credenziali del primo utente,
+copiare il token ed inserirlo nell'header nella sezione authorization,
+altrimenti darà errore 403.
